@@ -10,6 +10,6 @@ require "faker"
 10.times do
     Note.create(
         title: Faker::Hacker.abbreviation,
-        body: Faker::Hacker.say_somthing_smart,
+        body: Faker::Hacker.say_something_smart,
     )
 end

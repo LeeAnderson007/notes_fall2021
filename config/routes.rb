@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  
-  resources :notes
-  
-  #get 'notes/index'
-  #get 'notes/show'
-  #get 'notes/new'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # For details check out  https://guides.rubyonrails.org/routing.html
+  root 'notes#index'
+
+   get 'notes', to:"notes#index"
+   get 'notes/new', to:"notes#new"
+   get 'notes/:id', to:"notes#show"
+   get 'notes/:id/edit', to:"notes#edit"
+   
+post 'notes', to:'notes#create'
+put 'notes/:id', to:"notes#update"
+patch 'notes/:id', to:"notes#update"
+delete 'notes/:id', to:"notes#destroy"
 end
